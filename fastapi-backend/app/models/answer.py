@@ -1,5 +1,7 @@
+from typing import List
+from models.manyToManyTables import Submitted_answers
 from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, String
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Mapped
 from sqlalchemy.sql import func
 from models.base import Base
 
@@ -14,3 +16,6 @@ class Answer(Base):
     question_id = Column(Integer, ForeignKey("question.id"))
     question = relationship(
         "question", back_populates="answers")
+    user_submissions: Mapped[List["Test_submissions"]] = relationship(
+        secondary=Submitted_answers, back_populates="answers"
+    )

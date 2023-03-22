@@ -16,5 +16,8 @@ class Question(Base):
     test_id = Column(Integer, ForeignKey("test.id"))
     test = relationship(
         "test", back_populates="questions")
-    answers: Mapped[List["Answer"]] = relationship(
+    answers = relationship(
         "Answer", back_populates="question")
+    concept_id = Column(Integer, ForeignKey("concept.id"))
+    concept = relationship(
+        "concept", back_populates="questions")
