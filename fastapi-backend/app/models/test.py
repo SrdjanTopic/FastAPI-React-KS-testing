@@ -1,11 +1,10 @@
 from typing import List
 
-from models.manyToManyTables import Test_submissions
-from models.question import Question
-from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
-from sqlalchemy.orm import relationship, Mapped
-from sqlalchemy.sql import func
 from models.base import Base
+from models.manyToManyTables import Test_submissions
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+from sqlalchemy.orm import Mapped, relationship
+from sqlalchemy.sql import func
 
 
 class Test(Base):

@@ -1,4 +1,4 @@
-from models import base, user, test, answer, question, concept, profession, role, manyToManyTables, testSubmission
+from models import base, user, test, answer, question, concept, profession, role, manyToManyTables
 from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config

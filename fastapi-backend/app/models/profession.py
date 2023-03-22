@@ -1,9 +1,7 @@
-from typing import List
-from models.concept import Concept
-from sqlalchemy import Column, DateTime, Integer, String
-from sqlalchemy.orm import relationship, Mapped
-from sqlalchemy.sql import func
 from models.base import Base
+from sqlalchemy import Column, DateTime, Integer, String
+from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
 
 
 class Profession(Base):

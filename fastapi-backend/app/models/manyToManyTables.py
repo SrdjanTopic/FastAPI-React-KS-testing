@@ -10,6 +10,12 @@ class User_roles (Base):
     role_id = Column(Integer, ForeignKey('role.id'), primary_key=True)
 
 
+class Learned_concepts (Base):
+    __tablename__ = 'learned_concepts'
+    student_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
+    concept_id = Column(Integer, ForeignKey('concept.id'), primary_key=True)
+
+
 class Submitted_answers (Base):
     __tablename__ = 'submitted_answers'
     test_id = Column(Integer, primary_key=True)

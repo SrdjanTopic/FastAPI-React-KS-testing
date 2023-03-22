@@ -1,10 +1,8 @@
 from typing import List
 
-from models.manyToManyTables import Test_submissions
-
-from models.manyToManyTables import User_roles
-
 from models.base import Base
+from models.manyToManyTables import (Learned_concepts, Test_submissions,
+                                     User_roles)
 from sqlalchemy import Column, DateTime, Integer, String
 from sqlalchemy.orm import Mapped, relationship
 from sqlalchemy.sql import func
@@ -22,10 +20,11 @@ class User(Base):
     roles: Mapped[List["Role"]] = relationship(
         secondary=User_roles, back_populates="users"
     )
+    learned_concepts: Mapped[List["Concept"]] = relationship(
+        secondary=Learned_concepts, back_populates="learned_by_students"
+    )
     created_tests = relationship(
         "Test", back_populates="creator")
-    submitted_tests = relationship(
-        "Test_submission", back_populates="student")
     submitted_tests: Mapped[List["Test"]] = relationship(
         secondary=Test_submissions, back_populates="students"
     )
