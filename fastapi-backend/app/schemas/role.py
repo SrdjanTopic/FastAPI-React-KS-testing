@@ -6,7 +6,8 @@ from pydantic import BaseModel
 
 class RoleEnum(str, Enum):
     admin = 'ADMIN'
-    client = 'CLIENT'
+    teacher = 'TEACHER'
+    student = 'STUDENT'
 
 
 class Role(BaseModel):

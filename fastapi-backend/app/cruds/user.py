@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status
 from fastapi_sqlalchemy import db
-from models import Role as ModelRole
-from models import User as ModelUser
+from models.user import Role as ModelRole
+from models.user import User as ModelUser
 from schemas.user import UserRegister
 from utils.password_hashing import get_password_hash
 
@@ -33,7 +33,7 @@ async def add_user(user: UserRegister):
 
     added_user.password = get_password_hash(added_user.password)
     client_role = db.session.query(ModelRole).filter(
-        ModelRole.role == "CLIENT").first()
+        ModelRole.role == "STUDENT").first()
     added_user.roles.append(client_role)
     db.session.add(added_user)
     db.session.commit()
