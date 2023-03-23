@@ -1,6 +1,6 @@
 from typing import List
 
-from models.base import Base
+from models._base import Base
 from models.manyToManyTables import User_roles
 from sqlalchemy import Column, Integer
 from sqlalchemy.dialects.postgresql import ENUM

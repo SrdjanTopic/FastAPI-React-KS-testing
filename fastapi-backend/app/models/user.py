@@ -1,6 +1,6 @@
 from typing import List
 
-from models.base import Base
+from models._base import Base
 from models.manyToManyTables import (Learned_concepts, Test_submissions,
                                      User_roles)
 from sqlalchemy import Column, DateTime, Integer, String

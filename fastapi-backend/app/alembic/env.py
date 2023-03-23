@@ -1,4 +1,4 @@
-from models import base, user, test, answer, question, concept, profession, role, manyToManyTables
+from models import _base, user, test, answer, question, concept, profession, role, knowledgeSpace, testPublication, manyToManyTables
 from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
@@ -32,7 +32,7 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = base.Base.metadata
+target_metadata = _base.Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
